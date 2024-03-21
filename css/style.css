@@ -1,0 +1,390 @@
+/* 因为浏览器有默认样式，所以需要重置样式 */
+*{
+    padding:0;
+    margin:0;
+    /* border-box防止添加padding之后影响整体布局 */
+    box-sizing:border-box;
+
+}
+body{
+    position: relative;
+}
+
+/* 主题样式 main styling */
+html,body{
+
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    /* 设置行高 */
+    line-height:1.7em;
+}
+
+/* 重置a标签样式 */
+a{
+    color:#333;
+    /* 清除下划线 */
+    text-decoration:none;
+}
+
+/* 设定h1，h2，h3的样式 */
+h1,h2,h3{
+    padding-bottom:20px;
+}
+/* 设定段落标签p样式 */
+p{
+    /* y上下  x左右 */
+    margin:10px 0;
+}
+
+/* 一些会多次使用的类utility classes放在这里，便于复用 */
+
+/* 设置container通用样式 */
+.container{
+    /* 使其可以水平居中 */
+    margin:0 auto;
+    /* 最大宽度 */
+    max-width:1200px;
+    /* 防止margin塌陷，清除浮动*/
+    overflow:hidden;
+    padding:0 20px;
+}
+
+.text-primary1{
+    color:#ff86cd;
+}
+
+.text-primary2{
+    color:deepskyblue;
+}
+
+.text-primary3{
+    color:black;
+}
+
+.text-primary4{
+    color:white;
+}
+
+.text-primary5{
+    color:white;
+    background: black;
+}
+
+.bg-dark{
+    background:#444;
+    color:#fff;
+}
+
+.bg-white{
+    background:#f4f4f4;
+    color:#333;
+}
+
+.bg-blue{
+    background:rgb(112, 220, 253);
+    color:#f4f4f4;
+}
+/* navbar设置导航栏样式 */
+#navbar{
+    z-index: 9999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background:#333;
+    /* navbar导航栏字体为白色 */
+    color:#fff;
+    overflow:auto;
+}
+
+#navbar a{
+/* a标签定义超链接，用于从一张页面链接到另一张页面。字体为白色 */
+    color:#fff;
+}
+
+.clr{
+    clear:both;
+}
+
+/* 一个padding在y轴的值,所以叫py */
+.py{
+    padding:10px 0;
+
+}
+
+.l-heading{
+    font-size:40px;
+    padding-top:20px;
+
+}
+/* 设计浮动使h1,ul标签分布在导航栏的两侧 */
+#navbar h1{
+    float:left;
+    padding-top:20px;
+}
+
+#navbar ul{
+    /* <ul> 标签定义无序列表。 <li> 标签定义列表项目。*/
+    float:right;
+    /* 清除样式 */
+    list-style:none;
+}
+
+#navbar ul li{
+    float:left;
+}
+
+/* 设置a标签样式 */
+#navbar ul li a{
+    /* 转换成块标签设定padding值，text-align为center居中 */
+    display:block;
+    padding:20px;
+    text-align:center;
+}
+
+/* 设定hover悬停和当前选中效果，鼠标悬停变色 */
+#navbar ul li a:hover,
+#navbar ul li a.current{
+    /* 背景颜色 */
+    background:#444;
+    /* 字体颜色 */
+    color: #ff86cd;
+}
+
+/* showcase */
+/* 插入背景图片 设置不重复和定位，backg size为全覆盖*/
+#showcase{
+    background:url('../img/home-page-diagram.png') no-repeat center center/cover;
+    height:1000px;
+}
+
+#showcase .showcase-content{
+    /* 注意这个showcase和点之间必须有个空格！很坑！不然打不出效果！！！！ */
+    color:#fff;
+    text-align:center;
+    /* 使其和顶部保持距离 */
+    padding-top:300px;
+}
+
+/* 设h1标签 */
+#showcase .showcase-content h1{
+    font-size:80px;
+    /* 设置行高 */
+    line-height:1.2em;
+}
+
+#showcase .showcase-content p{
+    font-size:40px;
+    line-height:1.7em;
+    padding-bottom:20px;
+}
+
+/* 跳转按钮 */
+.btn{
+    /* a标签是一个行标签，要转换为行块标签 */
+    display:inline-block;
+    font-size:30px;
+    color:#fff;
+    background:deepskyblue;
+    padding:20px 35px;
+    /* 去掉外边框 */
+    border:none;
+}
+
+.btn:hover{
+    background:#ff86cd;
+
+}
+
+.btn-blue{
+    background-color: rgb(112, 220, 253);
+    color:#f4f4f4;
+}
+
+/* home-info */
+#home-info{
+    height:1000px;
+
+}
+
+#home-info h2{
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+#home-info .info-img{
+    float:left;
+    margin: 90px auto;
+    /* 好家伙，为了设置这个左边距我找了老半天！！！！ */
+    margin-left:90px;
+    width:40%;
+    background:url('../img/home-first-diagram.jpg') no-repeat center center/cover;
+    height:80%;
+    
+}
+
+#home-info .line_m{
+    text-decoration: line-through;
+}
+
+#home-info .info-content{
+    float:right;
+    width:50%;
+    text-align:center;
+    height:100%;
+    padding:100px 30px;
+    /* 隐藏超出部分 */
+    overflow:hidden;
+}
+
+#home-info .info-content p{
+    padding-bottom: 30px;
+    font-size: 20px;
+}
+
+/* features */
+/* 首页底部说明栏 */
+.box{
+    float:left;
+    /* 一行三个盒子，每个的宽度是百分之33.3 */
+    width:33.3%;
+    /* 设置padding，让字和字有一些距离 */
+    padding:50px;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
+    flex: 1;
+}
+
+.box i{
+    /* 图标和文字保持距离 */
+    margin-bottom:10px;
+
+}
+.box-container {
+    display: flex;
+}
+/* footer 文档中的页脚部分*/
+#main-footer{
+    text-align:center;
+    background:#333;
+    color:#fff;
+    padding:10px;
+
+}
+
+/* about-info */
+#about-info .info-left{
+    /* 左浮动 */
+    float:left;
+    width:50%;
+    height:100%; 
+}
+
+#about-info .info-right{
+    /* 右浮动 */
+    float:right;
+    width:50%;
+    height:100%;
+    padding-top: 50px;
+}
+
+#about-info .info-right img{
+    /* 行标签转化为块标签 */
+    display:block;
+    width:80%;
+    margin:0 auto;
+    /* 设置圆角边缘 */
+    border-radius:50%;
+}
+/* testimonials */
+#testimonials{
+    /* 设置高度 */
+    height:4500px;
+    /* 设置自己画的背景图 */
+    background:url('../img/background.jpeg') no-repeat center center/cover; 
+    /* 和上面有一些距离 */
+    padding-top:100px;
+}
+
+/* 标题样式 */
+#testimonials h2{
+    color:#fff;
+    text-align:center;
+    padding-bottom:40px;
+}
+
+/* 色块背景 */
+#testimonials .testimonial
+{
+    padding:50px 50px;
+    margin-bottom:50px;
+    /* 向 div 元素添加圆角边框 */
+    border-radius:50px;
+    /* 设置透明度,0-1，越小越透明 */
+    opacity:0.9;
+
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+/* 展示图片样式 */
+#testimonials .testimonial img{
+    /* 宽高 */
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    /* 左浮动77 */
+    float:left;
+    /* 把图片和文字隔开 */
+    margin-right: 50px;
+    max-height: 100%; /* 图片的最大高度为容器高度 */
+    max-width: 100%; /* 图片的最大宽度为容器宽度 */
+    object-fit: contain; /* 使用对象填充属性保持比例不变 */
+}
+
+#testimonials .testimonial p{
+    /* 设置幼圆字体 */
+    font-family: "YouYuan";
+    font-size: 50px;    
+    line-height: 2em;
+}
+
+/* contact-form */
+#contact-form .form-group{
+    margin-bottom:20px;
+
+}
+
+#contact-form label{
+    /* 行标签转换为块标签 */
+    display:block;
+    margin-bottom: 5px;
+}
+
+#contact-form input,
+#contact-form textarea{
+    /* textarea和input设置一样的样式 */
+    width:100%;
+    padding:10px;
+    border:1px #ddd solid;
+}
+
+#contact-form textarea{
+    height:200px;
+}
+#contact-form input:focus,
+#contact-form textarea:focus{
+    /* 点击聚焦标亮变色效果 */
+
+    /* 自带边框无 */
+    outline:none;
+    /* 设置边框颜色 */
+    border-color:#f7c08a;
+}
+
+
+

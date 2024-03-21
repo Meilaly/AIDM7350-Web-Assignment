@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 想要一打开网页，自动以原始比例显示，并且不允许用户修改 -->
+    <!-- width=device-width ：表示宽度是设备屏幕的宽度 initial-scale=1.0：表示初始的缩放比例 minimum-scale=0.5：表示最小的缩放比例 maximum-scale=2.0：表示最大的缩放比例
+ user-scalable=yes：表示用户是否可以调整缩放比例
+-->
+    <meta charset="utf-8" name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 页面描述 -->
+    <meta name="description" content="Welcome to DaiDai's woderful world!">
+    <!-- 关键词，用于浏览器搜索 -->
+    <meta name="keywords" content="cutton doll,DaiDai,cute,toy">
+
+    <!-- Link标签，用于引入外部样式 -->
+    <!-- 复制后添加到html中并不会显示图标,直接在 html 文档头部引用 CDN 文件就解决了问题，不需要下载到本地，然后在head头部引入。 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>DaiDai|About</title>
+
+</head>
+
+<body>
+    <header>
+        <!-- nav标签（表示该区域是导航链接，默认没有显示效果，只起语义作用）-->
+        <nav id="navbar">
+            <!-- 设置一个box，让页面内容始终居中 -->
+            <div class="container">
+                <!-- 页面点击logo跳转到首页，添加a（超链接、锚）标签实现跳转 -->
+                <!-- 注意此处h1和下方ul的层级关系 -->
+                <h1><a href="index.html">Boy DaiDai</a></h1>
+                <!-- ul标签包裹页面切换 -->
+                <ul>
+                    <!-- 因为每个li的内容都是可以跳转的，所以都给a标签 -->
+                    <!-- 给a标签一个名为current的类，当前页面也会变色 -->
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><a class="current" href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <section id="about-info" class="py bg-white">
+        <div class="container">
+            <!-- 设置两个盒子分别包裹左右的图片和文字 -->
+            <div class="info-left">
+                <h1 class="l-heading">About<span class="text-primary1"></span>DaiDai</h1>
+                <p><b>Name:</b> 呆呆</p>
+                <p><b>EnglishName:</b> DaiDai</p>
+                <p><b>Nickname:</b> Dully,DuDu</p>
+                <span class="text-primary1">(Unlike most protagonists with all their stats maxed out or exceptional growth abilities, DaiDai can be described as "looking not very smart.") </span></p>
+                <P><b>Personality:</b> Dumbfounded, innocent, kind, naive, slow to react, a curious little goofball who is always curious about everything. He often can't figure out situation and sometimes unintentionally get into trouble without realizing it. Fortunately, his mistakes are always forgiven and accepted.<br>
+                <span class="text-primary1">(I hope that DaiDai conveys a theme of love and healing, where mistakes are forgiven regardless of their nature, and it doesn't matter if one is not very smart or capable. The innocent and naive nature of DaiDai's character also aligns with the adorable appearance of a cotton doll.) </span></P>
+                <p><b>Favorite clothing:</b>  Various beautiful princess dresses.<br>
+                <span class="text-primary1">(Almost all of my friends say that DaiDai looks even cuter when wearing a little dress.I am also willing to dress him up as "DaiDai Princess" and visit DisneyLand. )</span></p>
+                <p><b>Friend pet:</b> A pink sleepy owl named "Kunkun"(困困) who is always dozing off.</p>
+            </div>
+            <div class="info-right">
+                <!-- 插入图片,alt是在图片丢失时显示的内容,防止网页出现空白引起用户的误解 -->
+                <img src="./img/about-first-diagram.jpg" alt="This picture has been eaten by DaiDai.">
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="l-heading">DaiDai's Happy Life~</h2>
+            <div class="testimonial bg-blue">
+                <img src="img/about-second-diagram.jpg" alt="This picture has been eaten by DaiDai.">
+                <p>DaiDai and his friend pet<span class="text-primary1"> Kunkun</span> are affectionate and cuddly with each other.<br>- (<span class="text-primary1">✿</span> <span  class="text-primary3">◠‿◠</span>)</p>
+            </div>
+            <div class="testimonial bg-blue">
+                <img src="img/about-third-diagram.jpg" alt="This picture has been eaten by DaiDai.">
+                <p>Making a<span class="text-primary1"> DIY dollhouse </span>together with DaiDai. He loves to make little crafts. </p>
+            </div>
+            <div class="testimonial bg-blue">
+                <img src="img/about-forth-diagram.jpg" alt="This picture has been eaten by DaiDai.">
+                <p><br>Daidai is playing LEGO <span class="text-primary1">happily .</span><br><br></p>
+            </div>
+            <div class="testimonial bg-blue">
+                <img src="img/about-fifth-diagram.jpg" alt="This picture has been eaten by DaiDai.">
+                <p>Taking Daidai to the <span class="text-primary1">Ginkgo Avenue </span>to enjoy the scenery, the little boy really likes fallen leaves.<br>（づ
+                    <span  class="text-primary3">￣3￣</span>）づ╭<span class="text-primary1">❤</span>～</p>
+            </div>
+            <div class="testimonial bg-blue">
+                <img src="img/about-sixth-diagram.jpg" alt="This picture has been eaten by DaiDai.">
+                <p>Watching the campus concert together with <span class="text-primary1">Daidai.</span></p>
+            </div>
+            <div class="testimonial bg-blue">
+                <img src="img/about-seventh-diagram.jpg" alt="This picture has been eaten by DaiDai.">
+                <p>Daidai likes white <span class="text-primary1">princess wedding dresses</span>~(The price of beauty is being intolerant of dirt. )</p>
+            </div>
+            <!--
+                <div class="testimonial bg-blue">
+                <img src="img/about-eighth-diagram.jpg" alt="This picture has been eaten by DaiDai.">
+                <p>Daidai says that<span class="text-primary1"> takeout </span>is more delicious than the food I cook.</p>
+            </div>
+            -->
+            <div class="testimonial bg-blue">
+                <img src="img/about-ninth-diagram.jpg" alt="This picture has been eaten by DaiDai.">
+                <p>DaiDai is making friends with the<span class="text-primary1"> Disney star Delo </span>  bought by my roommate.<br>（<span class="text-primary3">￣▽￣</span>）～■
+                </p>
+            </div>
+            <div class="testimonial bg-blue">
+                <img src="img/about-tenth-diagram.jpg" alt="This picture has been eaten by DaiDai.">
+                <p>Daidai looked at the  <span class="text-primary1">portrait I drew for him </span>in disbelief···</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 用footer包裹，制作底部版权信息 网站底部区一般只有一个-->
+    <footer id="main-footer">
+        <!-- &copy;是版权声明符号 分号要英文下的 -->
+        <p><address>Web Design and Production: Han Meilan 23421975 AIDM &copy; 2024,ALL Rights Reserved</address></p>
+        <p>Reference: https://www.bilibili.com/video/BV1Yr4y1P7hS?spm_id_from=333.999.0.0</p>
+        <p>Special thanks to Xiao Baobei (DaiDai) for the original character design. Source: XingMengChong Toy Store on Taobao.</p>
+    </footer>
+</body>
+
+</html>

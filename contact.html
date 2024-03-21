@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 想要一打开网页，自动以原始比例显示，并且不允许用户修改 -->
+    <!-- width=device-width ：表示宽度是设备屏幕的宽度 initial-scale=1.0：表示初始的缩放比例 minimum-scale=0.5：表示最小的缩放比例 maximum-scale=2.0：表示最大的缩放比例
+ user-scalable=yes：表示用户是否可以调整缩放比例
+-->
+    <meta charset="utf-8" name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 页面描述 -->
+    <meta name="description" content="Welcome to DaiDai's woderful world!">
+    <!-- 关键词，用于浏览器搜索 -->
+    <meta name="keywords" content="cutton doll,DaiDai,cute,toy">
+
+    <!-- Link标签，用于引入外部样式 -->
+    <!-- 复制后添加到html中并不会显示图标,直接在 html 文档头部引用 CDN 文件就解决了问题，不需要下载到本地，然后在head头部引入。 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Boy DaiDai|Contact</title>
+    <style>
+        .shell{
+            margin: auto;
+            margin-top: 50px;
+            width:900px;
+            height: 500px;
+            position:relative;
+            /* 挡住超出部分 */
+            overflow-x: hidden; 
+            border-radius: 5px;
+            border: 10px #ff86cd solid ;
+            box-shadow:20px 30px 20px rgba(0,0,0,0,5);
+        }
+        .images{
+            width:300%;
+            height:100%;
+            /* Flex是Flexible Box的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。 */
+            display:flex;
+            position:absolute;
+            left:0;
+            /* 	transition过渡效果需要指定多少秒或毫秒才能完成 */
+            transition: .5s;
+        }
+        /* 上方大图样式 */
+        .picture{
+            width: 100%;
+            /* 把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。
+背景图像的某些部分也许无法显示在背景定位区域中。 */
+            background-size:cover;
+        }
+        /* 需要显示的图片 */
+        .picture:nth-child(1)
+        {
+            background-image: url("img/long-gram1.jpg");
+        }
+        .picture:nth-child(2)
+        {
+            background-image: url("img/long-gram2.jpg");
+        }
+        .picture:nth-child(3)
+        {
+            background-image: url("img/long-gram3.jpg");
+        }
+        .min-images{
+            display:flex;
+            justify-content: space-evenly;
+            position:absolute;
+            bottom: 20px;
+            width: 40%;
+            /* z-index 属性指定一个元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。 */
+            z-index: 999;
+            right: 10%;
+        }
+        /* 下方小缩略按钮的样式 */
+        .min{
+            width: 60px;
+            height: 60px;
+            /* 鼠标悬浮时显示按钮指针 */
+            cursor:pointer;
+            border-radius: 50%;
+            border:solid 5px rgba(255,255,255,0.5);
+            /* 照片偏移量，缩略图调到合适位置 */
+            background-position: 50px 0; 
+        }
+        .min:nth-child(1)
+        {
+            background-image: url("img/min-1.jpg");
+        }
+        .min:nth-child(2)
+        {
+            background-image: url("img/min-2.jpg");
+        }
+        .min:nth-child(3)
+        {
+            background-image: url("img/min-3.jpg");
+        }
+        .button{
+            width:100%;
+            height: 100%;
+            position: absolute;
+            /* Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。任何一个容器都可以指定为Flex布局。 */
+            display:flex;
+            /* justify-content: space-evenly;  /* 均匀排列每个元素, 每个元素之间的间隔相等 */
+            justify-content: space-between;
+            /* 现象：html中可能有些地方不想让用户复制文字，或是用做了个点击按钮，点快的时候文字会被选中，很丑，这个时候可以使用下面的方案禁止文字选中。 */
+            user-select: none;
+        }
+        /* 向左/右翻页的按钮样式 */
+        .button-left, 
+        .button-right{
+            font-size:50px;
+            background-color: rgba(160,190,255,0.7);
+            padding:0 20px;
+            line-height:500px;
+            /* 更改鼠标样式 */
+            cursor:pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="container">
+                <h1><a href="index.html">Boy DaiDai</a></h1>
+                <ul>
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a class="current" href="contact.html">Contact</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <section id="contact-form" class="bluebackground">
+        <div class="container">
+            <h1 class="l-heading"><span class="text-primary1">Contact</span> Author</h1>
+            <p>Welcome to join and create DaiDai's Wonderful world!</p>
+            <!-- 设置form表单，action是需要提交的地址 -->
+            <form action="process.php" method="GET">
+                <!-- 用div包裹便于后续设置样式 -->
+                <div class="form-group">
+                    <!-- 点击输入框对应文本有聚焦,所以需要设置一个label -->
+                    <label form="name">Name</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="form-group">
+                    <label form="email">Email</label>
+                    <input type="text" name="email" id="name">
+                </div>
+                <div class="form-group">
+                    <!-- textarea定义多行的文本输入控件。 -->
+                    <label form="message">Context</label>
+                    <textarea type="text" name="message" id="name"></textarea>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <section id ="rotation picture" class="bg-blue">
+        <div class="shell">
+            <!-- ul定义无序列表 -->
+            <ul class="images">
+                <!-- li定义列表的项目。 -->
+                <li class="picture"></li>
+                <li class="picture"></li>
+                <li class="picture"></li>
+            </ul>
+            <ul class="min-images">
+                <li class="min"></li>
+                <li class="min"></li>
+                <li class="min"></li>
+            </ul>
+            <div class="button">
+                <!-- 用大于小于号当按钮 -->
+                <div class="button-left">  < </div>
+                <div class="button-right"> > </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 复用前面关于页面的内容加以修改类名和底色 -->
+    <section id='contact-info' class="bg-dark">
+        <div class="container">
+            <div class="box">
+                <i class ="fa fa-home fa-3x"></i>
+                <h3>Adress</h3>
+                <p>DaiDai's Wonderful Land</p>
+            </div>
+            <div class="box">
+                <i class ="fa fa-phone fa-3x"></i>
+                <h3>Telephone</h3>
+                <p>TEL:233333333</p>
+            </div>
+            <div class="box">
+                <i class ="fa fa-envelope fa-3x"></i>
+                <h3>Email</h3>
+                <p>Email:2333333333@DaiDai.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用footer包裹，制作底部版权信息 网站底部区一般只有一个-->
+    <footer id="main-footer">
+        <!-- &copy;是版权声明符号 分号要英文下的 -->
+        <p><address>Web Design and Production: Han Meilan 23421975 AIDM &copy; 2024,ALL Rights Reserved</address></p>
+        <p>Reference: https://www.bilibili.com/video/BV1Yr4y1P7hS?spm_id_from=333.999.0.0</p>
+        <p>Special thanks to Xiao Baobei (DaiDai) for the original character design. Source: XingMengChong Toy Store on Taobao.</p>
+    </footer>
+</body>
+<script>
+    // querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素。
+    let left=document.querySelector('.button-left');
+    let right=document.querySelector('.button-right');
+    // querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素。
+    let min=document.querySelectorAll('.min');
+    let images=document.querySelector('.images');
+    
+    // 照片序号
+    let index=0;
+    // 时间
+    let time=0;
+
+    function position(){
+        // 结合index定义当前图片的位置
+        images.style.left=(index *-100)+"%"
+    }
+    function add(){
+        // 相册拨到最后一张的话就返回第一张
+        if(index>=min.length-1){
+            index=0;
+        }
+        // 没到最后一张就往下播放
+        else{
+            index++;
+        }
+    }
+    function desc(){
+        // 播到头了就跳转最后一张
+        if(index<1)
+        {
+            index=min.length-1;
+        }
+        // 没到头就播上一张
+        else{
+            index--;
+        }
+    }
+    function timer(){
+        // 每隔三秒钟index+1，然后用desc（），add（）函数判断，再用定位函数调位置
+        time=setInterval(()=>{
+            // setInterval() 方法可按照指定的周期（以毫秒计）来调用函数或计算表达式。
+// setInterval() 方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭。由 setInterval() 返回的 ID 值可用作 clearInterval() 方法的
+            index++;
+            desc();
+            add();
+            position();
+        },3000)
+    }
+    left.addEventListener('click',()=>{
+        // 点左按钮倒退图片。所以用desc（）函数
+        desc();
+        position();
+        // 点击时停掉计时器，clearInterval() 方法可取消由 setInterval() 设置的 timeout。，不然就会跳两张图片
+        clearInterval(time);
+        timer();
+    })
+    right.addEventListener('click',()=>{
+        add();
+        position();
+        clearInterval(time);
+        timer();
+    })
+    // 点击小图片按钮调整顺序
+    for(let i=0;i<min.length;i++)
+    {
+        // 遍历小图片按钮数组，获取当前点击的小图片按钮的值并且赋值给index，就可以随之跳转了
+        min[i].addEventListener('click',()=>{
+            index=i;
+            position();
+            // 停掉定时器 clearInterval() 方法可取消由 setInterval() 设置的 timeout。
+            clearInterval(time);
+            timer();
+        })
+    }
+    // 开启定时器，这样就可以自动轮播了
+    timer();
+</script>
+</html>
